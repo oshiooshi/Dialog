@@ -22,8 +22,7 @@ class Config:
 
     # FIXME: Change path of training data.
     data_dir = './data'
-    train_data_path = f'{data_dir}/train_data.txt'
-    pickle_path = f'{data_dir}/new_h1.tsv'
+    train_data_path = f'{data_dir}/new_h1.tsv'
     #pickle_path = f'{data_dir}/train_data.pkl'
     fn = 'ckpt'
 
