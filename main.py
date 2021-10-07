@@ -53,7 +53,9 @@ if __name__ == '__main__':
 
     logging.info('Start Training')
     for epoch in range(start_epoch, Config.n_epoch):
+        logging.info("epoch:", epoch, "スタート")
         one_cycle(epoch, Config, model, optimizer, criterion,
                   BalancedDataLoader(dataset, tokenizer.pad_token_id),
                   tokenizer, device)
+        logging.info("epoch:", epoch, "終了")
         evaluate(Config, 'おはよーーー', tokenizer, model, device)
