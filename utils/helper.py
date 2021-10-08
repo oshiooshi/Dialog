@@ -25,7 +25,7 @@ def subsequent_mask(size: int) -> torch.Tensor:
 
 def make_train_data_from_txt(config, tokenizer):
     data = list()
-    with open(config.train_data_path, 'r', encoding='utf-8') as f:
+    with open(config.train_data_path, 'r', encoding='shift_jis') as f:
         lines = f.readlines()
     for i in tqdm(range(0, len(lines) - 1, 3)):
         data.append(tuple(map(tokenizer.encode, lines[i:i + 2])))
