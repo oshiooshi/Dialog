@@ -33,6 +33,16 @@ def make_train_data_from_txt(config, tokenizer):
         pickle.dump(data, f)
     return data
 
+def make_train_data_from_txt_2(config, tokenizer):
+    data = list()
+    with open(config.train_data_path_2, 'r', encoding='utf-8', errors='ignore') as f:
+        lines = f.readlines()
+    for i in tqdm(range(0, len(lines) - 1, 3)):
+        data.append(tuple(map(tokenizer.encode, lines[i:i + 2])))
+    with open(f'{config.pickle_path}', 'wb') as f:
+        pickle.dump(data, f)
+    return data
+
 
 def make_itf(data, voc_size):
     counter = Counter()
