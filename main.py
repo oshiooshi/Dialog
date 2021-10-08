@@ -29,9 +29,11 @@ if __name__ == '__main__':
 
     logging.info('Preparing training data')
     if Config.use_pickle:
+        print("◆Use pickle")
         with open(f'{Config.pickle_path}', 'rb') as f:
             train_data = pickle.load(f)
     else:
+        print("◆Use txt")
         train_data = make_train_data_from_txt(Config, tokenizer)
     itf = make_itf(train_data, Config.vocab_size)
     dataset = DialogDataset(train_data, tokenizer)
