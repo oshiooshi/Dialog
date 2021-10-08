@@ -2,7 +2,7 @@ class Config:
     seed = 116
     device = 'cpu'
 
-    n_epoch = 3
+    n_epoch = 3 #何回回すか
     batch_size = 64
     max_len = 22
     lr = 1e-3
@@ -23,7 +23,7 @@ class Config:
     # FIXME: Change path of training data.
     data_dir = './data'
     #train_data_path = f'{data_dir}/train_data.txt'
-    train_data_path = f'{data_dir}/train_data.txt'
+    train_data_path = f'{data_dir}/hagemasi_corpus_new.txt'
     pickle_path = f'{data_dir}/train_data.pkl'
     fn = 'ckpt'
 
